@@ -5,9 +5,6 @@ import sys
 from PIL import Image
 from PIL.ExifTags import TAGS, GPSTAGS
 
-# Get the script's directory
-script_directory = os.path.dirname(os.path.abspath(__file__))
-
 def create_google_maps_url(gps_coords):
     dec_deg_lat = convert_decimal_degrees(float(gps_coords["lat"][0]), float(gps_coords["lat"][1]), float(gps_coords["lat"][2]), gps_coords["lat_ref"])
     dec_deg_lon = convert_decimal_degrees(float(gps_coords["lon"][0]), float(gps_coords["lon"][1]), float(gps_coords["lon"][2]), gps_coords["lon_ref"])
@@ -36,7 +33,6 @@ def print_logo():
     """)
 
 def print_options_menu():
-
     print("           +-----------------------------------------------+")
     print("           |   How would you like to receive the output:   |")
     print("           |                                               |")
@@ -96,7 +92,22 @@ def main():
             print("Invalid option, please try again.")
 
     script_directory = os.path.dirname(os.path.abspath(__file__))
+
+    # Find the images folder dynamically
     images_folder = os.path.join(script_directory, "images")
+
+    # Check if the 'images' folder is not present and try an alternative location
+    if not os.path.exists(images_folder):
+        alt_images_folder = os.path.join(os.path.expanduser("~"), "exify", "images")
+        if os.path.exists(alt_images_folder):
+            images_folder = alt_images_folder
+        else:
+            alt_images_folder = os.path.join(os.path.dirname(os.path.realpath(sys.argv[0])), "images")
+            if os.path.exists(alt_images_folder):
+                images_folder = alt_images_folder
+            else:
+                print("No 'images' folder found.")
+                return
     
     files = os.listdir(images_folder)
 
