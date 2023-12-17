@@ -6,9 +6,11 @@ if [ "$EUID" -ne 0 ]; then
     exit
 fi
 
-# Install required packages (adjust based on your needs)
-apt-get update
-sudo pip install pillow
+# Install pip and Pillow using apt and pip
+echo "Installing pip and Pillow..."
+sudo apt-get update
+sudo apt-get install -y python3-pip
+sudo pip install Pillow
 
 # Install Python dependencies
 # No dependencies needed
