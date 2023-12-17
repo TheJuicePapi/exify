@@ -44,8 +44,11 @@ Git clone installation:
 
 DEPENDANCIES
 
-For this script to work you will need to have pillow and pip installed. The install.sh should automatically install it for you.
-If not then use 'sudo pip install pillow -y'
+For this script to work you will need to have pillow and pip installed. The install.sh should automatically install them for you.
+If not then use:
+
+* sudo apt-get install -y python3-pip
+* sudo pip3 install Pillow
 
 -------------------------------
 
