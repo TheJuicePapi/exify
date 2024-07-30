@@ -20,4 +20,4 @@ ln -s "$(pwd)/exify.py" /usr/local/bin/exify
 
 clear
 
-echo "Installation complete. You can now run 'exify' from any directory."
+echo "Installation complete. Launch a new terminal and you'll be able to run 'exify' from any directory."
