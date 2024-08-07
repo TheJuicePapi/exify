@@ -4,11 +4,14 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-![Screenshot_2023-12-17_11-20-45](https://github.com/TheJuicePapi/exify/assets/134894632/b21d78cb-fd8e-431e-a0d9-e92b1bdd2405)
+![Screenshot_2024-08-07_01-08-50](https://github.com/user-attachments/assets/0023a00e-72ed-4cb6-957c-2611215d17ad)
+
 
 ---------------------
-![Screenshot_20231217-114855_Gallery](https://github.com/TheJuicePapi/exify/assets/134894632/6f911124-5ffd-449e-80b2-0af6009c91cb)
-![Screenshot_20231217-114702_Gallery](https://github.com/TheJuicePapi/exify/assets/134894632/b60d6411-a48a-46b8-a026-26d488f7f2e3)
+![Screenshot_2024-08-07_01-09-58](https://github.com/user-attachments/assets/d4728d39-5c0b-47b6-8163-a7f77dfd0054)
+![Screenshot_2024-08-07_01-10-48](https://github.com/user-attachments/assets/17e564fa-9b9b-44b1-a352-4f2948a0e556)
+
+
 
 
 
