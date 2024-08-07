@@ -2,6 +2,7 @@
 
 import os
 import sys
+import time
 from PIL import Image
 from PIL.ExifTags import TAGS, GPSTAGS
 
@@ -16,42 +17,43 @@ def convert_decimal_degrees(degree, minutes, seconds, direction):
         decimal_degrees *= -1
     return decimal_degrees
 
+
+def clear_terminal():
+    os.system('clear')
+
+clear_terminal()
+    
 def print_logo():
-    print("""
-           _______  __ ____________  __
-          / ____/ |/ //  _/ ____/\ \/ /
-         / __/  |   / / // /_     \  / 
-        / /___ /   |_/ // __/     / /  
-       /_____//_/|_/___/_/       /_/  
-                                     by
-               ________          __     _         ___            _ 
-              /_  __/ /  ___ __ / /_ __(_)______ / _ \___ ____  (_)
-               / / / _ \/ -_) // / // / / __/ -_) ___/ _ `/ _ \/ / 
-              /_/ /_//_/\__/\___/\_,_/_/\__/\__/_/   \_,_/ .__/_/  
-                                                        /_/             
-        
-    """)
+    print("\033[1;36m" + """ 
+       ███████╗██╗░░██╗██╗███████╗██╗░░░██╗
+       ██╔════╝╚██╗██╔╝██║██╔════╝╚██╗░██╔╝
+       █████╗░░░╚███╔╝░██║█████╗░░░╚████╔╝░
+       ██╔══╝░░░██╔██╗░██║██╔══╝░░░░╚██╔╝░░
+       ███████╗██╔╝╚██╗██║██║░░░░░░░░██║░░░
+       ╚══════╝╚═╝░░╚═╝╚═╝╚═╝░░░░░░░░╚═╝░░░
+   \033[0m""")
+    print("       Image data extractor - TheJuicePapi")
 
 def print_options_menu():
-    print("           +-----------------------------------------------+")
-    print("           |   How would you like to receive the output:   |")
-    print("           |                                               |")
-    print("           |                                               |")
-    print("           |         1 - File         2 - Terminal         |")
-    print("           +-----------------------------------------------+")
-    print("                                                            ")
-    print("                                                            ")
+    print("\033[1;34m" + """\
+ ╔═════════════════════════════════════════════╗
+ ║  How would you like to receive the output:  ║
+ ║                                             ║
+ ║         1 - File      2 - Terminal          ║
+ ╚═════════════════════════════════════════════╝
+\033[1;39m""")
 
 def print_image_info_menu():
-    print("           +-----------------------------------+")
-    print("           |       Image Information Menu      |")
-    print("           +-----------------------------------+")
-    print("                                                ")
+    print("\033[1;38m" + """\
+           +----------------------------------------+
+           |        Image Information Menu          |
+           +----------------------------------------+
+\033[0m""")
 
 def process_image(file_path):
     try:
         image = Image.open(file_path)
-        print(f"\n{'=' * 80}\n{file_path}\n{'=' * 80}")
+        print(f"\033[1;36m{'=' * 48}\033[1;36m{file_path}\033[1;36m{'=' * 48}")
 
         gps_coords = {}
         if hasattr(image, "_getexif") and image._getexif() is not None:
@@ -83,7 +85,7 @@ def main():
     while True:
         try:
             print_options_menu()
-            output_choice = int(input("Enter choice here: "))
+            output_choice = int(input("Enter choice: "))
             if output_choice in [1, 2]:
                 break
             else:
